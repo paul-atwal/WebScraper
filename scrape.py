@@ -10,7 +10,7 @@ def scrape_website(website):
     sbr_connection = ChromiumRemoteConnection(SBR_WEBDRIVER, 'goog', 'chrome')
     with Remote(sbr_connection, options=ChromeOptions()) as driver:
         driver.get(website)
-        # CAPTCHA handling: If you're expecting a CAPTCHA on the target page, use the following code snippet to check the status of Scraping Browser's automatic CAPTCHA solver
+        
         print('Waiting captcha to solve...')
         solve_res = driver.execute('executeCdpCommand', {
             'cmd': 'Captcha.waitForSolve', 
